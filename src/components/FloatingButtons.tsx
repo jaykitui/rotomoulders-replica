@@ -15,8 +15,8 @@ export const FloatingButtons = () => {
         transition={{ duration: 0.3, delay: 0.5 }}
         className="pointer-events-auto flex items-center gap-2 bg-foreground text-background px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
       >
-        <Phone className="w-5 h-5" />
-        <span className="font-medium text-sm hidden sm:inline">Call us now</span>
+        <Phone className="w-4 h-4" />
+        <span className="font-medium text-sm">Call us now</span>
       </motion.a>
 
       {/* WhatsApp Button - Right */}
@@ -29,8 +29,8 @@ export const FloatingButtons = () => {
         transition={{ duration: 0.3, delay: 0.6 }}
         className="pointer-events-auto flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
       >
-        <MessageCircle className="w-5 h-5" />
-        <span className="font-medium text-sm hidden sm:inline">WhatsApp us now</span>
+        <MessageCircle className="w-4 h-4" />
+        <span className="font-medium text-sm">WhatsApp us now</span>
       </motion.a>
     </div>
   );

@@ -1,70 +1,49 @@
 import { motion } from 'framer-motion';
-import { CheckCircle } from 'lucide-react';
 import waterTankImg from '@/assets/water-tank.png';
-
-const highlights = [
-  'Food-grade, UV-stabilized polyethylene',
-  'State-of-the-art manufacturing process',
-  'Nationwide delivery coverage',
-  'Trusted by thousands of Kenyans',
-  'After-sales support and warranty',
-];
 
 export const About = () => {
   return (
-    <section id="about" className="section-padding bg-secondary/30">
+    <section id="about" className="section-padding bg-white">
       <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10"
+        >
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+            About Roto Tank
+          </h2>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              About <span className="text-primary">Roto Tank</span>
-            </h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-base leading-relaxed mb-6">
               Roto Tank is a leading provider of water storage solutions in Kenya. We are committed to delivering high-quality, durable, and affordable water tanks to meet the diverse needs of our customers. Our state-of-the-art manufacturing process ensures that every tank we produce meets the highest standards of quality and reliability.
             </p>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-base leading-relaxed">
               Our mission is to provide every Kenyan with access to safe and clean water storage. We believe in innovation, customer satisfaction, and contributing positively to the communities we serve.
             </p>
-
-            <ul className="space-y-3">
-              {highlights.map((item, index) => (
-                <motion.li
-                  key={item}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.5 }}
+            className="flex justify-center"
           >
-            <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-primary/20 rounded-3xl transform rotate-6" />
-              <div className="absolute inset-0 bg-card rounded-3xl shadow-xl flex items-center justify-center p-12">
-                <img
-                  src={waterTankImg}
-                  alt="Roto Tank Product"
-                  className="w-full h-full object-contain animate-float"
-                />
-              </div>
-            </div>
+            <img
+              src={waterTankImg}
+              alt="About Roto Tank"
+              className="max-w-sm w-full h-auto"
+            />
           </motion.div>
         </div>
       </div>

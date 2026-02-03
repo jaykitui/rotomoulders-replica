@@ -51,29 +51,29 @@ const ProductCard = ({ product, image, type, index }: ProductCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: index * 0.05 }}
-    className="bg-card rounded-2xl overflow-hidden card-shadow group"
+    className="bg-white rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow group"
   >
-    <div className="relative aspect-square bg-secondary/30 p-6 flex items-center justify-center">
+    <div className="relative aspect-square bg-secondary/20 p-4 flex items-center justify-center">
       <img
         src={image}
         alt={product.name}
         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
       />
-      <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground font-bold">
+      <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground font-semibold text-xs">
         {product.size}
       </Badge>
     </div>
     
-    <div className="p-5">
-      <h3 className="font-display font-semibold text-foreground mb-1 line-clamp-1">
+    <div className="p-4">
+      <h3 className="font-display font-semibold text-foreground text-sm mb-1 line-clamp-1">
         {product.name}
       </h3>
-      <p className="text-accent font-bold text-xl mb-3">{product.price}</p>
-      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+      <p className="text-accent font-bold text-lg mb-2">{product.price}</p>
+      <p className="text-muted-foreground text-xs mb-3 line-clamp-2">
         {product.description}
       </p>
       
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-3 mb-4">
         <div className="flex items-center gap-1 text-xs text-muted-foreground">
           <Droplets className="w-3 h-3 text-primary" />
           <span>{type === 'tank' ? 'Food Grade' : 'Industrial Grade'}</span>
@@ -84,11 +84,16 @@ const ProductCard = ({ product, image, type, index }: ProductCardProps) => (
         </div>
       </div>
       
-      <Button variant="cta" className="w-full" asChild>
-        <a href={getWhatsAppLink(product.name, product.price)} target="_blank" rel="noopener noreferrer">
-          Ask for Quote
-        </a>
-      </Button>
+      <div className="flex gap-2">
+        <Button variant="outline" size="sm" className="flex-1 text-xs" asChild>
+          <a href="#contact">View Details</a>
+        </Button>
+        <Button variant="cta" size="sm" className="flex-1 text-xs" asChild>
+          <a href={getWhatsAppLink(product.name, product.price)} target="_blank" rel="noopener noreferrer">
+            Ask for Quote
+          </a>
+        </Button>
+      </div>
     </div>
   </motion.div>
 );
@@ -102,22 +107,22 @@ export const Products = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our <span className="text-primary">Products</span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
+            Our Products
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We deliver across all major towns countrywide
+          <p className="text-muted-foreground">
+            We deliver across all major towns countrywide.
           </p>
         </motion.div>
 
         {/* Water Tanks */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl font-bold text-foreground mb-6">
+        <div className="mb-12">
+          <h3 className="font-display text-xl font-bold text-foreground mb-6">
             Water Tanks (Kentank, Toptank, Roto Tank)
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {waterTanks.map((product, index) => (
               <ProductCard
                 key={product.name}
@@ -132,10 +137,10 @@ export const Products = () => {
 
         {/* HDPE Drums */}
         <div>
-          <h3 className="font-display text-2xl font-bold text-foreground mb-6">
+          <h3 className="font-display text-xl font-bold text-foreground mb-6">
             HDPE Drums
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {hdpeDrums.map((product, index) => (
               <ProductCard
                 key={product.name}
