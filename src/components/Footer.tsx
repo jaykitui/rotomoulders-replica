@@ -1,75 +1,42 @@
+import { Phone, MessageCircle } from 'lucide-react';
+
 const WHATSAPP_NUMBER = '+254711350657';
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}`;
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-foreground text-background py-8">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Logo & Description */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-lg">RT</span>
-              </div>
-              <span className="font-display font-bold text-xl">
-                Roto<span className="text-primary">Tank</span>
-              </span>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-md bg-accent flex items-center justify-center">
+              <span className="text-white font-display font-bold text-xs">ROTO</span>
             </div>
-            <p className="text-background/70 text-sm leading-relaxed">
-              Leading provider of water storage solutions in Kenya. Quality tanks for homes, businesses, and industries.
-            </p>
+            <span className="font-display font-bold text-lg">Roto Tank</span>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#home" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#products" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-background/70 hover:text-primary transition-colors text-sm">
-                  Contact Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-background/70">
-              <li>
-                <a href={`tel:${WHATSAPP_NUMBER}`} className="hover:text-primary transition-colors">
-                  +254 711 350 657
-                </a>
-              </li>
-              <li>
-                <a href="mailto:sales@rototank.co.ke" className="hover:text-primary transition-colors">
-                  sales@rototank.co.ke
-                </a>
-              </li>
-              <li>Nairobi, Kenya</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-background/10 pt-8">
-          <p className="text-center text-background/50 text-sm">
+          
+          <p className="text-background/70 text-sm text-center">
             © {new Date().getFullYear()} Roto Tank. All rights reserved.
           </p>
+          
+          <div className="flex gap-4">
+            <a
+              href={`tel:${WHATSAPP_NUMBER}`}
+              className="flex items-center gap-2 text-background/70 hover:text-background transition-colors text-sm"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="hidden sm:inline">Call us</span>
+            </a>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-background/70 hover:text-background transition-colors text-sm"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className="hidden sm:inline">WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

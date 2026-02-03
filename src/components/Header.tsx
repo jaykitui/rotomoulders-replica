@@ -17,17 +17,14 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-lg md:text-xl">RT</span>
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-md bg-accent flex items-center justify-center">
+              <span className="text-white font-display font-bold text-sm md:text-base">ROTO</span>
             </div>
-            <span className="font-display font-bold text-lg md:text-xl text-foreground">
-              Roto<span className="text-primary">Tank</span>
-            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -36,7 +33,7 @@ export const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 {item.label}
               </a>
@@ -73,7 +70,7 @@ export const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-white"
             >
               <nav className="py-4 flex flex-col gap-4">
                 {navItems.map((item) => (
@@ -81,12 +78,12 @@ export const Header = () => {
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-2"
+                    className="text-base font-medium text-foreground hover:text-primary transition-colors px-2 py-2"
                   >
                     {item.label}
                   </a>
                 ))}
-                <Button variant="cta" size="lg" className="mt-2" asChild>
+                <Button variant="nav" size="lg" className="mt-2" asChild>
                   <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                     Ask for Quote
                   </a>
