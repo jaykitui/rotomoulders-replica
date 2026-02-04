@@ -29,7 +29,7 @@ const hdpeDrums = [
 ];
 
 const getWhatsAppLink = (productName: string, price: string) => {
-  const message = `Hello Roto Tank, I would like to ask for a quote for the ${productName} (${price}).`;
+  const message = `At what price is this available - ${productName} (${price})`;
   return `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}?text=${encodeURIComponent(message)}`;
 };
 

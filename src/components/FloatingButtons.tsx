@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, MessageCircle } from 'lucide-react';
 
 const WHATSAPP_NUMBER = '+254711350657';
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}?text=${encodeURIComponent('Hello Roto Tank, I would like to inquire about your products.')}`;
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}?text=${encodeURIComponent('At what price is this available')}`;
 
 export const FloatingButtons = () => {
   return (
