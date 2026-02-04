@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Logo } from '@/components/Logo';
 
 const WHATSAPP_NUMBER = '254711350657';
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('At what price is this available')}`;
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello, I would like to request a quote for your tanks.')}`;
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -18,13 +19,11 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-14 md:h-16">
+      <div className="container-custom px-4">
+        <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-md bg-accent flex items-center justify-center">
-              <span className="text-white font-display font-bold text-sm md:text-base">ROTO</span>
-            </div>
+          <a href="#home">
+            <Logo size="sm" variant="full" />
           </a>
 
           {/* Desktop Navigation */}
