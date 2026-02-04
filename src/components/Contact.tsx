@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '+254711350657';
+const WHATSAPP_NUMBER = '254711350657';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ export const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
   };
 
   return (

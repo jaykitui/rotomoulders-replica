@@ -1,7 +1,7 @@
 import { Phone, MessageCircle } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '+254711350657';
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}`;
+const WHATSAPP_NUMBER = '254711350657';
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const Footer = () => {
   return (

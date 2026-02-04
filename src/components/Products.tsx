@@ -5,7 +5,7 @@ import { Droplets, Shield } from 'lucide-react';
 import waterTankImg from '@/assets/water-tank.png';
 import hdpeDrumImg from '@/assets/hdpe-drum.png';
 
-const WHATSAPP_NUMBER = '+254711350657';
+const WHATSAPP_NUMBER = '254711350657';
 
 const waterTanks = [
   { size: '1,000L', name: '1,000 Litres Cylindrical Tank', price: 'Ksh 5,500', description: 'Perfect for small households and residential use. Compact design that fits in tight spaces.' },
@@ -30,7 +30,7 @@ const hdpeDrums = [
 
 const getWhatsAppLink = (productName: string, price: string) => {
   const message = `At what price is this available - ${productName} (${price})`;
-  return `https://wa.me/${WHATSAPP_NUMBER.replace(/\s/g, '')}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
 interface ProductCardProps {
