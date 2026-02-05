@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Droplets, Shield } from 'lucide-react';
-import waterTankImg from '@/assets/water-tank.png';
+ import rotoTankImg from '@/assets/roto-tank.png';
 import hdpeDrumImg from '@/assets/hdpe-drum.png';
 
 const WHATSAPP_NUMBER = '254711350657';
@@ -127,7 +127,7 @@ export const Products = () => {
               <ProductCard
                 key={product.name}
                 product={product}
-                image={waterTankImg}
+                 image={rotoTankImg}
                 type="tank"
                 index={index}
               />
