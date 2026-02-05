@@ -9,16 +9,17 @@ const slides = [
   {
     id: 1,
      image: heroBannerRoto,
-     type: 'banner',
+     type: 'banner' as const,
+     isDefault: true,
   },
   {
     id: 2,
      image: rotoTankImg,
-     type: 'product',
+     type: 'product' as const,
   },
   {
     id: 3,
-     type: 'text',
+     type: 'text' as const,
      title: 'OUR ROTO TANK ASSURES',
      highlight: 'NOTHING BUT',
      subtitle: 'THE HIGHEST STANDARDS',
@@ -27,23 +28,30 @@ const slides = [
 
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
+    // Only auto-rotate if user hasn't interacted
+    if (hasInteracted) return;
+    
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [hasInteracted]);
 
   const goToSlide = (index: number) => {
+    setHasInteracted(true);
     setCurrentSlide(index);
   };
 
   const nextSlide = () => {
+    setHasInteracted(true);
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
+    setHasInteracted(true);
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
