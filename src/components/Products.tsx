@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Droplets, Shield } from 'lucide-react';
  import rotoTankImg from '@/assets/roto-tank.png';
-import hdpeDrumImg from '@/assets/hdpe-drum.png';
+ import hdpeDrumImg from '@/assets/hdpe-drum-blue.png';
 
 const WHATSAPP_NUMBER = '254711350657';
 

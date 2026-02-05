@@ -2,26 +2,26 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import heroBanner from '@/assets/hero-banner.jpg';
+ import heroBannerRoto from '@/assets/hero-banner-roto.webp';
 
 const slides = [
   {
     id: 1,
-    image: heroBanner,
+     image: heroBannerRoto,
     title: 'JOIN THE',
     highlight: 'ROTO FAMILY',
     subtitle: 'FOR QUALITY TANKS!!',
   },
   {
     id: 2,
-    image: heroBanner,
+     image: heroBannerRoto,
     title: 'PREMIUM',
     highlight: 'WATER TANKS',
     subtitle: 'FOR EVERY NEED',
   },
   {
     id: 3,
-    image: heroBanner,
+     image: heroBannerRoto,
     title: 'DURABLE &',
     highlight: 'RELIABLE',
     subtitle: 'STORAGE SOLUTIONS',
