@@ -1,16 +1,17 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import heroBannerGirl from '@/assets/hero-banner-girl.webp';
+import { Button } from '@/components/ui/button';
+import heroMain from '@/assets/hero-main.webp';
 import heroBannerRoto from '@/assets/hero-banner-roto.webp';
 import heroBanner3 from '@/assets/hero-banner-3.webp';
 
-// Slides in exact order as rotomoulders.shop
+// Slides matching rotomoulders.shop exactly
 const slides = [
   {
     id: 1,
-    image: heroBannerGirl,
-    alt: 'Girl with Roto Tank',
+    image: heroMain,
+    alt: 'Join the Roto Family - Girl with Roto Tank',
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const slides = [
   {
     id: 3,
     image: heroBanner3,
-    alt: 'Roto Tank Banner 3',
+    alt: 'Roto Tank Banner',
   },
 ];
 
