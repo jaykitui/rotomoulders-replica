@@ -30,7 +30,7 @@ const slides = [
   },
 ];
 
-const AUTOPLAY_INTERVAL = 5000;
+const AUTOPLAY_INTERVAL = 7000;
 const TRANSITION_DURATION = 0.8;
 
 export const Hero = () => {
