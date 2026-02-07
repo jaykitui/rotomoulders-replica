@@ -30,12 +30,14 @@ const slides = [
   },
 ];
 
-const AUTOPLAY_INTERVAL = 7000;
+const AUTOPLAY_INTERVAL = 8000;
+const INITIAL_DELAY = 3000;
 const TRANSITION_DURATION = 0.8;
 
 export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -45,16 +47,25 @@ export const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
-  // Infinite auto-play with pause on hover
+  // Initial delay before auto-play starts
   useEffect(() => {
-    if (isPaused) return;
+    const initialTimer = setTimeout(() => {
+      setHasStarted(true);
+    }, INITIAL_DELAY);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
+
+  // Infinite auto-play with pause on hover (only after initial delay)
+  useEffect(() => {
+    if (isPaused || !hasStarted) return;
 
     const timer = setInterval(() => {
       nextSlide();
     }, AUTOPLAY_INTERVAL);
 
     return () => clearInterval(timer);
-  }, [isPaused, nextSlide]);
+  }, [isPaused, hasStarted, nextSlide]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
