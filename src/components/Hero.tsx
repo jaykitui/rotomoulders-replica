@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import heroBannerGirl from '@/assets/hero-banner-girl.webp';
-import heroBanner1 from '@/assets/hero-banner-1.webp';
 import heroBannerRoto from '@/assets/hero-banner-roto.webp';
 import heroBanner3 from '@/assets/hero-banner-3.webp';
 
@@ -15,16 +14,11 @@ const slides = [
   },
   {
     id: 2,
-    image: heroBanner1,
-    alt: 'Roto Tank Banner 1',
-  },
-  {
-    id: 3,
     image: heroBannerRoto,
     alt: 'Roto Tank Collection',
   },
   {
-    id: 4,
+    id: 3,
     image: heroBanner3,
     alt: 'Roto Tank Banner 3',
   },
