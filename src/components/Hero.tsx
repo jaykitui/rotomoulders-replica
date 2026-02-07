@@ -2,24 +2,18 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroMain from '@/assets/hero-main.webp';
 import heroBannerRoto from '@/assets/hero-banner-roto.webp';
 import heroBanner3 from '@/assets/hero-banner-3.webp';
 
-// Slides matching rotomoulders.shop exactly
+// Slides matching rotomoulders.shop
 const slides = [
   {
     id: 1,
-    image: heroMain,
-    alt: 'Join the Roto Family - Girl with Roto Tank',
-  },
-  {
-    id: 2,
     image: heroBannerRoto,
     alt: 'Roto Tank Collection',
   },
   {
-    id: 3,
+    id: 2,
     image: heroBanner3,
     alt: 'Roto Tank Banner',
   },
